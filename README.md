@@ -1,5 +1,8 @@
 # Flask x HTMX
 
+Stage 1:
+- Flask application initialization
+
 ## URLs
 - https://htmx.org/essays/how-did-rest-come-to-mean-the-opposite-of-rest/
 - https://htmx.org/essays/hateoas/#:~:text=Hypermedia%20as%20the%20Engine%20of,provide%20information%20dynamically%20through%20hypermedia.
