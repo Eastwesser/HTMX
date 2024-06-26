@@ -1,12 +1,19 @@
 from flask import Flask
 
-app = Flask(__name__)
+from rest.index import index_app
 
 
-@app.route('/')
-def hello_world():  # put application's code here
-    return 'Hello World!'
+def create_app():
+    app = Flask(__name__)
+    app.register_blueprint(index_app)
+    return app
 
 
-if __name__ == '__main__':
-    app.run()
+def main():
+    app = create_app()
+    app.run(debug=True)
+
+
+# To run via PyCharm button
+if __name__ == "__main__":
+    main()
