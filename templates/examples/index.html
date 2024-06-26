@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Examples list
+{% endblock %}
+
+{% block body %}
+    <h1>Examples:</h1>
+    <ul>
+        <li>list item 1</li>
+    </ul>
+
+    <div>
+        <ul>
+            <li>
+               <a href="{{ url_for('index_app.index') }}">
+                    Back to index
+               </a>
+            </li>
+        </ul>
+    </div>
+
+{% endblock %}
