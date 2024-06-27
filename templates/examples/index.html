@@ -7,8 +7,14 @@
 {% block body %}
     <h1>Examples:</h1>
     <ul>
-        <li>list item 1</li>
+        <li>
+            <a href="{{ url_for('examples_app.ping') }}">
+                Example Ping
+            </a>
+        </li>
     </ul>
+
+    <hr>
 
     <div>
         <ul>
@@ -19,5 +25,4 @@
             </li>
         </ul>
     </div>
-
 {% endblock %}
