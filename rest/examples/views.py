@@ -39,5 +39,5 @@ def handle_ping():
 )
 def handle_hover():
     if request.method == "POST":
-        return "I see you!"
+        return "I see you! (only once)"
     return render_template("examples/hover/show-hover.html")
