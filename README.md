@@ -6,6 +6,12 @@ Stage 1:
 Stage 2:
 - HTMX installation
 
+Stage 3:
+- Ping
+- Hover
+- HTMX:
+  - `hx-trigger="mouseenter"`
+  - `ht-swap="outerHTML"`
 
 # This REST API is still under development, check links for more info:
 
