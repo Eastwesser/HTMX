@@ -1,4 +1,5 @@
 # Flask x HTMX
+Use `hx-get`, `hx-post`, `hx-put`, `hx-patch`, and `hx-delete` commands instead of typing in JavaScript.
 
 Stage 1:
 - Flask application initialization
