@@ -7,13 +7,17 @@
 {% block body %}
     <h1>Send Ping:</h1>
     <div>
-       <button hx-post="{{ url_for('examples_app.ping') }}">
-           Send ping
-       </button>
+            <button hx-post="{{ url_for('examples_app.ping') }}">
+               Send ping
+            </button>
         <br>
-        <button hx-post="{{ url_for('examples_app.ping') }}" hx-trigger="click[ctrlKey]">
-           Send ping (only with ctrl+click)
-       </button>
+            <button hx-post="{{ url_for('examples_app.ping') }}" hx-trigger="click[ctrlKey]">
+               Send ping (only with ctrl+click)
+            </button>
+        <br>
+            <button hx-post="{{ url_for('examples_app.ping') }}" hx-trigger="click[shiftKey]">
+               Send ping (only with shift+click)
+            </button>
     </div>
     {% include 'examples/components/footer.html' %}
 {% endblock %}
