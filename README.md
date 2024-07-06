@@ -14,7 +14,7 @@ Stage 2:
 - HTMX installation
 
 Stage 3:
-- Ping
+- Ping (with ctrl/shift+click)
 - Hover
 - HTMX:
   - `hx-trigger="mouseenter"`
