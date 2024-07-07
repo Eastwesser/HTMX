@@ -14,13 +14,15 @@ Stage 2:
 - HTMX installation
 
 Stage 3:
-- Ping (with ctrl/shift+click)
+- Ping 
+  - on click 
+  - on ctrl + click
+  - on shift + click
 - Hover
-- HTMX:
+- HTMX
   - `ht-swap="outerHTML"` 
   - `hx-trigger="mouseenter"`
-  - `ht-swap="click[ctrlKey]"`
-  - `ht-swap="click[shiftKey]"`
+  - `ht-trigger="click[shiftKey]"`
 
 # This REST API is still under development, check links for more info:
 
