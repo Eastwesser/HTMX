@@ -17,8 +17,10 @@ Stage 3:
 - Ping (with ctrl/shift+click)
 - Hover
 - HTMX:
+  - `ht-swap="outerHTML"` 
   - `hx-trigger="mouseenter"`
-  - `ht-swap="outerHTML"`
+  - `ht-swap="click[ctrlKey]"`
+  - `ht-swap="click[shiftKey]"`
 
 # This REST API is still under development, check links for more info:
 
