@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Clicker
+{% endblock %}
+
+{% block body %}
+    <h3>Clicker:</h3>
+
+{#    <div>#}
+{#        <div>#}
+{#            Clicked times {{ count }}#}
+{#        </div>#}
+{#        <button>Click!</button>#}
+{#    </div>#}
+
+{#No HTMX variant below#}
+    <form method="post">
+        <div>Clicked times: {{ count }}</div>
+        <button type="submit">Click me!</button>
+    </form>
+{#No HTMX variant above#}
+
+    {% include 'components/footer-to-index.html' %}
+{% endblock %}

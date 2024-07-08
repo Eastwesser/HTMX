@@ -24,6 +24,10 @@ Stage 3:
   - `hx-trigger="mouseenter"`
   - `ht-trigger="click[shiftKey]"`
 
+Stage 4:
+- Clicker
+
+
 # This REST API is still under development, check links for more info:
 
 ## URLs
