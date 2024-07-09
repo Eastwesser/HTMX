@@ -25,7 +25,7 @@ Stage 3:
   - `ht-trigger="click[shiftKey]"`
 
 Stage 4:
-- Clicker
+- Clicker via HTMX
 
 
 # This REST API is still under development, check links for more info:
