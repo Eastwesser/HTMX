@@ -21,9 +21,13 @@ def show_clicker_page():
     """
     Keep all the state on backend, and show new info to client
     """
+
+    template_name = "clicker/index.html"
+    if is_background_request():
+        template_name = "clicker/clicker-components/clicker-body.html"
     # This shows the number of clicks
     return render_template(
-        "clicker/index.html",
+        template_name,
         count=clicker.count,
     )
 
@@ -35,7 +39,7 @@ def handle_each_click():
     # Check if it is background or not
     template_name = "clicker/index.html"
     if is_background_request():
-        template_name = ("clicker/clicker-components/click-count.html",)
+        template_name = "clicker/clicker-components/click-count.html"
 
     # Here we increase the number of clicks +1
     return render_template(
