@@ -30,6 +30,9 @@ Stage 4:
 Stage 5:
 - Embed clicker into index page via HTMX
 
+Stage 5:
+- Handle HTMX boosts
+
 # This REST API is still under development, check links for more info:
 
 ## URLs
