@@ -13,10 +13,21 @@
         </a>
     </h2>
 
-    <h2>
+    <span
+        {# Use trigger-load below to include counter #}
+        hx-trigger="load"
+        hx-get="{{ url_for('clicker_app.index') }}"
+        hx-swap="outerHTML"
+        >Click!
+    </span>
+
+    {# This part ignores the previously made click counter after page refreshing #}
+    {# {% include 'clicker/index.html' %} #}
+
+    <h4>
         <a href="{{ url_for('clicker_app.index') }}">
             Clicker
         </a>
-    </h2>
+    </h4>
 
 {% endblock %}
