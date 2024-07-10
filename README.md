@@ -27,6 +27,8 @@ Stage 3:
 Stage 4:
 - Clicker via HTMX
 
+Stage 5:
+- Embed clicker into index page via HTMX
 
 # This REST API is still under development, check links for more info:
 
