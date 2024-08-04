@@ -5,6 +5,7 @@ from flask import Flask
 from rest.index import index_app
 from rest.examples import examples_app
 from rest.clicker import clicker_app
+from rest.products import products_app
 
 
 def create_app():
@@ -21,6 +22,10 @@ def create_app():
     app.register_blueprint(
         clicker_app,
         url_prefix="/clicker",
+    )
+    app.register_blueprint(
+        products_app,
+        url_prefix="/products",
     )
     return app
 

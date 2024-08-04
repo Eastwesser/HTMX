@@ -30,8 +30,11 @@ Stage 4:
 Stage 5:
 - Embed clicker into index page via HTMX
 
-Stage 5:
+Stage 6:
 - Handle HTMX boosts
+
+Stage 6:
+- Handle products CRUD list
 
 # This REST API is still under development, check links for more info:
 
