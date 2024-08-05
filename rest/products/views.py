@@ -34,10 +34,10 @@ def create_product():
         product_name=product_name,
         product_price=int(product_price),
     )
-    # products = products_storage.get_list()
-    # return render_template(
-    #     "products/list.html",
-    #     products=products,
-    # )
-    url = url_for("products_app.list")
-    return redirect(url)
+    products = products_storage.get_list()
+    return render_template(
+        "products/components/items-list.html",
+        products=products,
+    )
+    # url = url_for("products_app.list")
+    # return redirect(url)

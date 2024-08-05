@@ -8,7 +8,12 @@
     <h1>Products</h1>
 
         <div>
-            <form method="post">
+            <form
+                hx-post="{{ url_for('products_app.create') }}"
+                hx-target="#products-list"
+                hx-swap="outerHTML"
+                hx-on::after-request="this.reset()"
+            >
 
                 <div>
                     <label for="product-name">Product name</label>
@@ -37,14 +42,7 @@
             </form>
         </div>
 
-        <ul>
-            {% for product in products %}
-            <li>
-                {{ product.name }}
-                ${{ product.price }}
-            </li>
-            {% endfor %}
-        </ul>
+    {% include 'products/components/items-list.html' %}
 
     {% include 'components/footer-to-index.html' %}
 {% endblock %}
