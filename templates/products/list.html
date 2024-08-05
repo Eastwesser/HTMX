@@ -6,6 +6,37 @@
 
 {% block body %}
     <h1>Products</h1>
+
+        <div>
+            <form method="post">
+
+                <div>
+                    <label for="product-name">Product name</label>
+                    <input
+                        type="text"
+                        id="product-name"
+                        name="product-name"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="product-price">Product price</label>
+                    <input
+                        type="number"
+                        id="product-price"
+                        name="product-price"
+                        min="1"
+                        max="99999"
+                        required
+                    >
+                </div>
+
+                <button type="submit">Add</button>
+
+            </form>
+        </div>
+
         <ul>
             {% for product in products %}
             <li>
@@ -14,4 +45,6 @@
             </li>
             {% endfor %}
         </ul>
+
+    {% include 'components/footer-to-index.html' %}
 {% endblock %}
