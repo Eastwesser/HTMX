@@ -33,8 +33,11 @@ Stage 5:
 Stage 6:
 - Handle HTMX boosts
 
-Stage 6:
+Stage 7:
 - Handle products CRUD list
+
+Stage 8:
+- Handle create CRUD list
 
 # This REST API is still under development, check links for more info:
 
