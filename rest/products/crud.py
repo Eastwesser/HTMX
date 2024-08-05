@@ -18,6 +18,53 @@ class ProductsStorage:
         self.last_id += 1
         return self.last_id
 
-    def add(self, product_name: str, price: int) -> None:
-        return
-        # 1:32:47
+    def add(self, product_name: str, product_price: int) -> Product:
+        product = Product(
+            id=self.next_id,
+            name=product_name,
+            price=product_price,
+        )
+        self.products[product.id] = product
+        return product
+
+    def get_list(self) -> list[Product]:
+        return list(self.products.values())
+
+
+products_storage = ProductsStorage()
+
+
+products_storage.add(
+    "Motherboard",
+    200,
+)
+
+products_storage.add(
+    "CPU",
+    300,
+)
+
+products_storage.add(
+    "GPU",
+    400,
+)
+
+products_storage.add(
+    "RAM",
+    100,
+)
+
+products_storage.add(
+    "SSD",
+    100,
+)
+
+products_storage.add(
+    "Power Supply",
+    100,
+)
+
+products_storage.add(
+    "Case",
+    100,
+)
