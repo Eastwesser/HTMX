@@ -37,7 +37,7 @@ Stage 7:
 - Handle products CRUD list
 
 Stage 8:
-- Handle create CRUD list
+- Handle & create CRUD list, loading via HTMX
 
 # This REST API is still under development, check links for more info:
 
