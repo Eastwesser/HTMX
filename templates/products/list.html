@@ -12,7 +12,7 @@
                 hx-post="{{ url_for('products_app.create') }}"
                 hx-target="#products-list"
                 hx-swap="outerHTML"
-                hx-on::after-request="this.reset()"
+                hx-on::after-request="if (event.detail.successful) this.reset()"
             >
 
                 <div>
