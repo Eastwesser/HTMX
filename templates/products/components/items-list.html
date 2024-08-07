@@ -1,8 +1,5 @@
 <ul id="products-list">
     {% for product in products %}
-    <li>
-        {{ product.name }}
-        ${{ product.price }}
-    </li>
+        {%  include 'products/components/item.html' %}
     {% endfor %}
 </ul>

@@ -11,7 +11,7 @@
             <form
                 hx-post="{{ url_for('products_app.create') }}"
                 hx-target="#products-list"
-                hx-swap="outerHTML"
+                hx-swap="beforeend"
                 hx-on::after-request="if (event.detail.successful) this.reset()"
             >
 
