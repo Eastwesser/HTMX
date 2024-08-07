@@ -3,6 +3,7 @@ from flask import (
     request,
     render_template,
 )
+from werkzeug.exceptions import BadRequest
 
 from .crud import products_storage
 
@@ -27,7 +28,8 @@ def get_products_list():
 def create_product():
     product_name = request.form.get("product-name", "").strip()
     product_price = request.form.get("product-price", "").strip()
-    # if product_price.isdigit():
+    if not product_price.isdigit():
+        raise BadRequest("product price should be integer")
     # raise BadRequest("Product abc")
     product = products_storage.add(
         product_name=product_name,
