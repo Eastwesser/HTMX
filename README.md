@@ -38,6 +38,7 @@ Stage 7:
 
 Stage 8:
 - Handle & create CRUD list, loading via HTMX
+- Added creation a new element and return only the new rendered element via ```hx-swap="beforeend"```
 
 # This REST API is still under development, check links for more info:
 
