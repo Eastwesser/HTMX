@@ -1,9 +1,12 @@
+from http import HTTPStatus
+
 from flask import (
     Blueprint,
     request,
     render_template,
+    Response,
 )
-from werkzeug.exceptions import BadRequest
+from werkzeug.exceptions import HTTPException
 
 from .crud import products_storage
 
@@ -29,8 +32,18 @@ def create_product():
     product_name = request.form.get("product-name", "").strip()
     product_price = request.form.get("product-price", "").strip()
     if not product_price.isdigit():
-        raise BadRequest("product price should be integer")
-    # raise BadRequest("Product abc")
+        # raise BadRequest("Product abc")
+        # raise BadRequest("product price should be integer")
+        response = Response(
+            render_template(
+                "products/components/form.html",
+                product_name=product_name,
+                error="product price should be integer",
+            ),
+            status=HTTPStatus.UNPROCESSABLE_ENTITY,
+        )
+        raise HTTPException(response=response)
+
     product = products_storage.add(
         product_name=product_name,
         product_price=int(product_price),

@@ -1,0 +1,39 @@
+<form
+    id="create-product"
+    hx-post="{{ url_for('products_app.create') }}"
+{#    hx-target="#products-list"#}
+{#    hx-swap="beforeend"#}
+    hx-swap="outerHTML"
+    hx-on::after-request="if (event.detail.successful) this.reset()"
+>
+
+    <div>
+        <label for="product-name">Product name</label>
+        <input
+            type="text"
+            id="product-name"
+            name="product-name"
+            value="{{ product_name }}"
+            required
+        >
+    </div>
+
+    <div>
+        <label for="product-price">Product price</label>
+        <input
+            type="number"
+            id="product-price"
+            name="product-price"
+            min="1"
+            max="99999"
+            required
+        >
+    </div>
+
+    {% if error %}
+        <div style="color: red;">{{ error }}</div>
+    {% endif %}
+
+    <button type="submit">Add</button>
+
+</form>

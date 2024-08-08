@@ -32,7 +32,10 @@ def create_app():
 
 def main():
     app = create_app()
-    app.run(debug=True)
+    app.run(
+        debug=True,
+        port=5050,
+    )
 
 
 # To run via PyCharm button
