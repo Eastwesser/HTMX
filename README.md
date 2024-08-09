@@ -45,6 +45,8 @@ Stage 8:
 
 Stage 9:
 - What-The-Forms (Flask)
+- Added CSRF protection from Flask WTF
+- Processing CSRF form Flask WTF for adding the new product
 
 # This REST API is still under development, check links for more info:
 

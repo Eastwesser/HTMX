@@ -60,7 +60,7 @@ def create_product():
     return render_template(
         "products/components/form-and-item-oob.html",
         product=product,
-        form=form,
+        form=ProductForm(formdata=None),
     )  # When requested, we create a new element and return only the new rendered element
 
     # products = products_storage.get_list()
