@@ -49,7 +49,7 @@ def create_product():
         product_price=int(product_price),
     )
     return render_template(
-        "products/components/item-oob.html",
+        "products/components/form-and-item-oob.html",
         product=product,
     )  # When requested, we create a new element and return only the new rendered element
 
