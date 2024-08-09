@@ -9,6 +9,7 @@ from flask import (
 from werkzeug.exceptions import HTTPException
 
 from .crud import products_storage
+from .forms import ProductForm
 
 products_app = Blueprint(
     "products_app",
@@ -29,24 +30,30 @@ def get_products_list():
 
 @app.post("/", endpoint="create")
 def create_product():
-    product_name = request.form.get("product-name", "").strip()
-    product_price = request.form.get("product-price", "").strip()
-    if not product_price.isdigit():
+    # For Flask wtf we use this method:
+    form = ProductForm()
+    if not form.validate_on_submit():
+        # """product_name = request.form.get("product-name", "").strip()"""
+        # """product_price = request.form.get("product-price", "").strip()"""
+        # """if not product_price.isdigit():"""
         # raise BadRequest("Product abc")
         # raise BadRequest("product price should be integer")
         response = Response(
             render_template(
                 "products/components/form.html",
-                product_name=product_name,
-                error="product price should be integer",
+                form=form,
+                # """ product_name=product_name, """
+                # """ error="product price should be integer", """
             ),
             status=HTTPStatus.UNPROCESSABLE_ENTITY,
         )
         raise HTTPException(response=response)
 
     product = products_storage.add(
-        product_name=product_name,
-        product_price=int(product_price),
+        # """ product_name=product_name, """
+        product_name=form.name.data,
+        # """ product_price=int(product_price), """
+        product_price=form.price.data,
     )
     return render_template(
         "products/components/form-and-item-oob.html",

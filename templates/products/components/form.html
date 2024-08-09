@@ -6,31 +6,38 @@
     hx-swap="outerHTML"
 {#    hx-on::after-request="if (event.detail.successful) this.reset()"#}
 >
+        {{ form.hidden_tag() }}
+
 
     <div>
-        <label for="product-name">Product name</label>
-        <input
-            type="text"
-            id="product-name"
-            name="product-name"
-            value="{{ product_name }}"
-            required
+        {{ form.name.label }} {{ form.name(size=20) }}
+
+{#        <label for="product-name">Product name</label>#}
+{#        <input#}
+{#            type="text"#}
+{#            id="product-name"#}
+{#            name="product-name"#}
+{#            value="{{ product_name }}"#}
+{#            required#}
         >
     </div>
 
     <div>
-        <label for="product-price">Product price</label>
-        <input
-            type="number"
-            id="product-price"
-            name="product-price"
-            min="1"
-            max="99999"
-            required
-        >
+        {{ form.price.label }} {{ form.price }}
+
+{#        <label for="product-price">Product price</label>#}
+{#        <input#}
+{#            type="number"#}
+{#            id="product-price"#}
+{#            name="product-price"#}
+{#            min="1"#}
+{#            max="99999"#}
+{#            required#}
+{#        >#}
     </div>
 
-    {% if error %}
+{#    {% if error %}#}
+    {% if form.errors %}
         <div style="color: red;">{{ error }}</div>
     {% endif %}
 
