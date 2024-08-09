@@ -41,6 +41,7 @@ Stage 8:
 - Added creation a new element and return only the new rendered element via ```hx-swap="beforeend"```
 - Processing using 'out of band' (hs-swap-oob)
 - Handle form error 422
+- Return many html files for replacement: form and oob-item
 
 # This REST API is still under development, check links for more info:
 
