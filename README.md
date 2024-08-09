@@ -49,7 +49,7 @@ Stage 9:
 - Processing CSRF form Flask WTF for adding the new product
 
 Stage 10:
-- Added HTMX Headers
+- Added HTMX (CSRFToken) Headers
 
 # This REST API is still under development, check links for more info:
 
