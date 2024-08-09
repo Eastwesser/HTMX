@@ -21,10 +21,12 @@ app = products_app
 
 @app.get("/", endpoint="list")
 def get_products_list():
+    form = ProductForm()
     products = products_storage.get_list()
     return render_template(
         "products/list.html",
         products=products,
+        form=form,
     )
 
 
@@ -58,6 +60,7 @@ def create_product():
     return render_template(
         "products/components/form-and-item-oob.html",
         product=product,
+        form=form,
     )  # When requested, we create a new element and return only the new rendered element
 
     # products = products_storage.get_list()

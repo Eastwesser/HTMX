@@ -1,3 +1,6 @@
+{% from 'macros/error-list.html' import errors_list %}
+
+
 <form
     id="create-product"
     hx-post="{{ url_for('products_app.create') }}"
@@ -18,8 +21,11 @@
 {#            id="product-name"#}
 {#            name="product-name"#}
 {#            value="{{ product_name }}"#}
-{#            required#}
-        >
+{#            required>#}
+
+        {% if form.name.errors %}
+            {{ errors_list(form.name.errors) }}
+        {% endif %}
     </div>
 
     <div>
@@ -34,13 +40,16 @@
 {#            max="99999"#}
 {#            required#}
 {#        >#}
+        {% if form.name.errors %}
+            {{ errors_list(form.name.errors) }}
+        {% endif %}
     </div>
 
 {#    {% if error %}#}
-    {% if form.errors %}
-        <div style="color: red;">{{ error }}</div>
-    {% endif %}
-
-    <button type="submit">Add</button>
-
+{#    {% if form.errors %}#}
+{#        <div style="color: red;">{{ error }}</div>#}
+{#    {% endif %}#}
+{##}
+{#    <button type="submit">Add</button>#}
+    {{ form.submit }}
 </form>
