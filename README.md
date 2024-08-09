@@ -48,6 +48,9 @@ Stage 9:
 - Added CSRF protection from Flask WTF
 - Processing CSRF form Flask WTF for adding the new product
 
+Stage 10:
+- Added HTMX Headers
+
 # This REST API is still under development, check links for more info:
 
 ## URLs
