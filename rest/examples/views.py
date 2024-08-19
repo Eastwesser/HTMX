@@ -42,5 +42,5 @@ def handle_ping():
 @csrf.exempt
 def handle_hover():
     if request.method == "POST":
-        return "I see you! (only once)"
+        return "I see you! (just only once)"
     return render_template("examples/hover/show-hover.html")
