@@ -1,12 +1,18 @@
 <li>
+
     {{ product.name }}
     ${{ product.price }}
-</li>
-<button>
-    <img
+
+    <button
+        style="cursor: pointer;"
+    >
+
+        <img
             src="{{ url_for('static', filename="img/Trash_Can.svg.png") }}"
             alt="delete"
-            width="20em"
-            height="20em"
-    >
-</button>
+            width="10rem"
+            height="10rem"
+        >
+    </button>
+
+</li>
