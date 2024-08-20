@@ -52,6 +52,9 @@ Stage 10:
 - Added HTMX (CSRFToken) Headers
 - CSRF exempt example in 'rest/examples/views.py'
 
+Stage 11:
+- Products CRUD: Handle delete HTMX animation
+
 # This REST API is still under development, check links for more info:
 
 ## URLs
