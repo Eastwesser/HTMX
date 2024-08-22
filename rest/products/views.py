@@ -2,7 +2,6 @@ from http import HTTPStatus
 
 from flask import (
     Blueprint,
-    request,
     render_template,
     Response,
 )
@@ -70,3 +69,9 @@ def create_product():
     # )
     # url = url_for("products_app.list")
     # return redirect(url)
+
+
+@app.delete("/<int:product_id>/", endpoint="delete")  # int is for flask validation
+def delete_product(product_id: int):
+    products_storage.delete(product_id)
+    return Response(status=HTTPStatus.NO_CONTENT)  # NO_CONTENT code 204

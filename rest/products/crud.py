@@ -38,6 +38,9 @@ class ProductsStorage:
         # Here we check if the name already exists
         return product_name in self.names
 
+    def delete(self, product_id: int) -> None:
+        self.products.pop(product_id, None)
+
 
 products_storage = ProductsStorage()
 
