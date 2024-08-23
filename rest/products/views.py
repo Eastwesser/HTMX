@@ -74,4 +74,5 @@ def create_product():
 @app.delete("/<int:product_id>/", endpoint="delete")  # int is for flask validation
 def delete_product(product_id: int):
     products_storage.delete(product_id)
+
     return Response(status=HTTPStatus.NO_CONTENT)  # NO_CONTENT code 204
