@@ -54,7 +54,7 @@ Stage 10:
 
 Stage 11:
 - Products CRUD: Handle delete HTMX animation
-- Main DELETE function
+- Main DELETE function (after icon click)
 
 # This REST API is still under development, check links for more info:
 
