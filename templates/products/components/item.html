@@ -4,14 +4,18 @@
     ${{ product.price }}
 
     <button
-        style="cursor: pointer;"
+            hx-headers='{"X-CSRFToken": "{{ csrf_token() }}"}'
+            hx-delete="{{ url_for('products_app.delete', product_id=product.id) }}"
+            hx-swap="outerHTML"
+            hx-target="closest li"
+            style="cursor: pointer;"
     >
 
         <img
-            src="{{ url_for('static', filename="img/Trash_Can.svg.png") }}"
-            alt="delete"
-            width="10rem"
-            height="10rem"
+                src="{{ url_for('static', filename="img/Trash_Can.svg.png") }}"
+                alt="delete"
+                width="10rem"
+                height="10rem"
         >
 
     </button>
