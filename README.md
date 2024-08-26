@@ -56,6 +56,7 @@ Stage 11:
 - Products CRUD: Handle delete HTMX animation
 - Main DELETE function (after icon click)
 - Delete product by ID, closest choice: hx-target="closest li"
+- Delete product by ID, via product-item: hx-target="closest .product-item"
 
 # This REST API is still under development, check links for more info:
 
