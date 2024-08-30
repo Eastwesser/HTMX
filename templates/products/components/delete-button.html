@@ -1,7 +1,7 @@
 <button
     hx-headers='{"X-CSRFToken": "{{ csrf_token() }}"}'
     hx-delete="{{ url_for('products_app.delete', product_id=product.id) }}"
-    hx-swap="outerHTML"
+    hx-swap="outerHTML swap:2000ms"
 {#    add animation in hx-indicator#}
     hx-indicator="#product-{{ product.id }}"
 {#    hx-target="closest .product-item"#}
