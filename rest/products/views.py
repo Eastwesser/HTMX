@@ -5,7 +5,7 @@ from flask import (
     render_template,
     Response,
 )
-from werkzeug.exceptions import HTTPException
+from werkzeug.exceptions import HTTPException, NotFound
 
 from .crud import products_storage
 from .forms import ProductForm
@@ -71,12 +71,24 @@ def create_product():
     # return redirect(url)
 
 
+@app.get("/<int:product_id>/", endpoint="details")
+def get_product_details(product_id: int):
+    product = products_storage.get_by_id(product_id)
+    if not product:
+        raise NotFound(f"Product with id {product_id} doesn't exist!")
+
+    return render_template(
+        "products/details.html",
+        product=product,
+    )
+
+
 @app.delete("/<int:product_id>/", endpoint="delete")  # int is for flask validation
 def delete_product(product_id: int):
 
     # sleep() meme below xD
     d = {}
-    for i in range(7_000):
+    for i in range(4_000):
         d[i] = i**i
     # just downgrade to 5_000, 2_000, 1_000
 

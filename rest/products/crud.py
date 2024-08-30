@@ -8,6 +8,7 @@ class Product:
     price: int
 
 
+# Here are the methods for the project
 @dataclass
 class ProductsStorage:
     products: dict[int, Product] = field(default_factory=dict)
@@ -33,6 +34,9 @@ class ProductsStorage:
 
     def get_list(self) -> list[Product]:
         return list(self.products.values())
+
+    def get_by_id(self, product_id: int) -> Product | None:
+        return self.products.get(product_id)
 
     def name_exists(self, product_name: str) -> bool:
         # Here we check if the name already exists
