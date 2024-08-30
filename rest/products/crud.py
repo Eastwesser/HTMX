@@ -23,6 +23,10 @@ class ProductsStorage:
     def names(self) -> set[str]:
         return {product.name for product in self.products.values()}
 
+    def name_exists(self, product_name: str) -> bool:
+        # Here we check if the name already exists
+        return product_name in self.names
+
     def add(self, product_name: str, product_price: int) -> Product:
         product = Product(
             id=self.next_id,
@@ -38,9 +42,16 @@ class ProductsStorage:
     def get_by_id(self, product_id: int) -> Product | None:
         return self.products.get(product_id)
 
-    def name_exists(self, product_name: str) -> bool:
-        # Here we check if the name already exists
-        return product_name in self.names
+    def update(
+        self,
+        product_id: int,
+        product_name: str,
+        product_price: int,
+    ) -> Product:
+        product = self.products[product_id]
+        product.name = product_name
+        product.price = product_price
+        return product
 
     def delete(self, product_id: int) -> None:
         self.products.pop(product_id, None)

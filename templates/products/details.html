@@ -7,13 +7,7 @@
 {% block body %}
     <h1>Product #{{ product.id }} details</h1>
 
-    <div>
-        Name: {{ product.name }}
-    </div>
-    <div>
-        Price: ${{ product.price }}
-{#        {% include 'products/components/form.html' %}#}
-    </div>
+    {% include 'products/components/form-update.html' %}
 
     <hr>
     <div>

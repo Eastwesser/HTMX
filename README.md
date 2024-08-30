@@ -59,6 +59,11 @@ Stage 11:
 - Delete product by ID, via product-item class choice: `hx-target="closest .product-item"`
 - Animations: loading `.htmx-request` and swapping `.htmx-swapping`
 
+Stage 12:
+- Product update:
+  - PUT query,
+  - Error processing (form)
+
 # This REST API is still under development, check links for more info:
 
 ## URLs

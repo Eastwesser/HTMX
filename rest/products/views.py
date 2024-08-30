@@ -1,3 +1,4 @@
+from dataclasses import asdict
 from http import HTTPStatus
 
 from flask import (
@@ -71,15 +72,46 @@ def create_product():
     # return redirect(url)
 
 
+def get_product(product_id: int):
+    product = products_storage.get_by_id(product_id)
+    if product:
+        return product
+    raise NotFound(f"Product with id {product_id} doesn't exist!")
+
+
 @app.get("/<int:product_id>/", endpoint="details")
 def get_product_details(product_id: int):
-    product = products_storage.get_by_id(product_id)
-    if not product:
-        raise NotFound(f"Product with id {product_id} doesn't exist!")
-
+    product = get_product(product_id)
     return render_template(
         "products/details.html",
         product=product,
+        form=ProductForm(data=asdict(product)),
+    )
+
+
+@app.put("/<int:product_id>/", endpoint="update")
+def update_product(product_id: int):
+    product = get_product(product_id)
+    form = ProductForm()
+    if not form.validate_on_submit():
+        response = Response(
+            render_template(
+                "products/components/form-update.html",
+                form=form,
+            ),
+            status=HTTPStatus.UNPROCESSABLE_ENTITY,
+        )
+        raise HTTPException(response=response)
+
+    products_storage.update(
+        product_id=product_id,
+        product_name=form.name.data,
+        product_price=form.price.data,
+    )
+    return render_template(
+        "products/components/form-update.html",
+        product=product,
+        form=form,
     )
 
 
