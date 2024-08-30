@@ -2,8 +2,9 @@
     hx-headers='{"X-CSRFToken": "{{ csrf_token() }}"}'
     hx-delete="{{ url_for('products_app.delete', product_id=product.id) }}"
     hx-swap="outerHTML"
+{#    add animation in hx-indicator#}
+    hx-indicator="#product-{{ product.id }}"
 {#    hx-target="closest .product-item"#}
-    hx-indicator="#product-{{ product.id }}"<!-- Здесь мы устанавливаем анимацию -->
     hx-target="closest li"
     style="cursor: pointer;"
 >
