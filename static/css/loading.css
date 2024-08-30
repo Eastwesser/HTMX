@@ -1,0 +1,11 @@
+.loading-animation {
+    display: none;
+}
+
+.htmx-request .loading-animation {
+    display: inline;
+}
+
+.htmx-request.loading-animation {
+    display: inline;
+}

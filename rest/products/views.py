@@ -73,6 +73,12 @@ def create_product():
 
 @app.delete("/<int:product_id>/", endpoint="delete")  # int is for flask validation
 def delete_product(product_id: int):
-    products_storage.delete(product_id)
 
+    # sleep() meme below xD
+    d = {}
+    for i in range(7_000):
+        d[i] = i**i
+    # just downgrade to 5_000, 2_000, 1_000
+
+    products_storage.delete(product_id)
     return Response(status=HTTPStatus.NO_CONTENT)  # NO_CONTENT code 204
