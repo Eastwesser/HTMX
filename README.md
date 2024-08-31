@@ -64,6 +64,9 @@ Stage 12:
   - PUT query,
   - Error processing (form)
 
+Stage 13:
+- HTMX Push url:
+
 # This REST API is still under development, check links for more info:
 
 ## URLs
