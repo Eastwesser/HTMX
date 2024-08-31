@@ -120,7 +120,7 @@ def delete_product(product_id: int):
 
     # sleep() meme below xD
     d = {}
-    for i in range(4_000):
+    for i in range(3_000):
         d[i] = i**i
     # just downgrade to 5_000, 2_000, 1_000
 
