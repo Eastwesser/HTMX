@@ -65,7 +65,8 @@ Stage 12:
   - Error processing (form)
 
 Stage 13:
-- HTMX Push url:
+- HTMX Push url
+- `hx-target="body"`
 
 # This REST API is still under development, check links for more info:
 
