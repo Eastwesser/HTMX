@@ -1,3 +1,5 @@
+import random
+import string
 from dataclasses import dataclass, field
 
 
@@ -60,37 +62,46 @@ class ProductsStorage:
 products_storage = ProductsStorage()
 
 
-products_storage.add(
-    "Motherboard",
-    200,
-)
+# products_storage.add(
+#     "Motherboard",
+#     200,
+# )
+#
+# products_storage.add(
+#     "CPU",
+#     300,
+# )
+#
+# products_storage.add(
+#     "GPU",
+#     400,
+# )
+#
+# products_storage.add(
+#     "RAM",
+#     100,
+# )
+#
+# products_storage.add(
+#     "SSD",
+#     100,
+# )
+#
+# products_storage.add(
+#     "Power Supply",
+#     100,
+# )
+#
+# products_storage.add(
+#     "Case",
+#     100,
+# )
 
-products_storage.add(
-    "CPU",
-    300,
-)
-
-products_storage.add(
-    "GPU",
-    400,
-)
-
-products_storage.add(
-    "RAM",
-    100,
-)
-
-products_storage.add(
-    "SSD",
-    100,
-)
-
-products_storage.add(
-    "Power Supply",
-    100,
-)
-
-products_storage.add(
-    "Case",
-    100,
-)
+for idx in range(1, 57):
+    random_suffix = "".join(random.choices(string.ascii_letters, k=4))
+    product_name = f"product-{idx:03d} {random_suffix}"  # 1 -> '001', 42 -> '042'
+    product_price = random.randint(1, 9) * random.choice([10, 50, 100, 200, 400, 600])
+    products_storage.add(
+        product_name=product_name,
+        product_price=product_price,
+    )

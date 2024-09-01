@@ -69,6 +69,9 @@ Stage 13:
 - `hx-target="body"`
 - `hx-confirm`
 
+Stage 14:
+- Products CRUD: HTMX Reveal load + paginate
+
 # This REST API is still under development, check links for more info:
 
 ## URLs
