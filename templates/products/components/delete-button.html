@@ -1,18 +1,16 @@
 <button
-    hx-headers='{"X-CSRFToken": "{{ csrf_token() }}"}'
-    hx-delete="{{ url_for('products_app.delete', product_id=product.id) }}"
-    hx-swap="outerHTML swap:3000ms"
-{#    add animation in hx-indicator#}
-    hx-indicator="#product-{{ product.id }}"
-{#    hx-target="closest .product-item"#}
-    hx-target="closest li"
-    style="cursor: pointer;"
+        hx-delete="{{ url_for('products_app.delete', product_id=product.id) }}"
+        hx-headers='{"X-CSRFToken": "{{ csrf_token() }}"}'
+        hx-swap="outerHTML swap:700ms"
+        hx-indicator="#product-{{ product.id }}"
+        hx-target="closest .product-item"
+        style="cursor: pointer;"
 >
     <img
-        src="{{ url_for('static', filename="img/trash.svg") }}"
-        alt="delete"
-        width="10rem"
-        height="10rem"
+            src="{{ url_for('static', filename="img/trash.svg") }}"
+            alt="delete"
+            width="10rem"
+            height="10rem"
     >
 
 </button>

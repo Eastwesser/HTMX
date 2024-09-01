@@ -5,6 +5,9 @@ from flask import (
     Blueprint,
     render_template,
     Response,
+    redirect,
+    url_for,
+    request,
 )
 from werkzeug.exceptions import HTTPException, NotFound
 
@@ -125,4 +128,7 @@ def delete_product(product_id: int):
     # just downgrade to 5_000, 2_000, 1_000
 
     products_storage.delete(product_id)
-    return Response(status=HTTPStatus.NO_CONTENT)  # NO_CONTENT code 204
+    if not request.args.get("redirect"):
+        return Response(status=HTTPStatus.NO_CONTENT)  # NO_CONTENT code 204
+    url = url_for("products_app.list")
+    return redirect(url, code=HTTPStatus.SEE_OTHER)
