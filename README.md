@@ -67,6 +67,7 @@ Stage 12:
 Stage 13:
 - HTMX Push url - browser history replacement
 - `hx-target="body"`
+- `hx-confirm`
 
 # This REST API is still under development, check links for more info:
 
