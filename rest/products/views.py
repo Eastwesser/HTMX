@@ -11,6 +11,7 @@ from flask import (
 )
 from werkzeug.exceptions import HTTPException, NotFound
 
+from utils.helpers import is_background_request
 from .crud import products_storage
 from .forms import ProductForm
 
@@ -37,16 +38,21 @@ def get_products_list():
     from_idx = to_idx - per_page
     products = all_products[from_idx:to_idx]
     next_page = to_idx < len(all_products) and page + 1
+    prev_page = to_idx > 1 and page - 1
 
     template_name = "products/list.html"
-    if request.args.get("only_items"):
-        template_name = ("products/components/only-items-reveal.html",)
+    # if request.args.get("only_items"):
+    if (
+        is_background_request() and request.headers.get("Hx-Target") == "products_list"
+    ):  # here we exclude the html body replacement
+        template_name = "products/components/items-list-single-page.html"
     return render_template(
         template_name,
         products=products,
         form=form,
+        per_page=per_page,  # can be omitted in url address
         next_page=next_page,
-        per_page=per_page,
+        prev_page=prev_page,
     )
 
 
