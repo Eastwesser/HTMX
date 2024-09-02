@@ -75,7 +75,7 @@ Stage 14:
 - `hx-trigger="revealed"`
 
 Stage 15:
-- Products CRUD: HTMX paginate buttons
+- Products CRUD: HTMX regular pagination with buttons
 
 # This REST API is still under development, check links for more info:
 
