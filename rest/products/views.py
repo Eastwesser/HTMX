@@ -21,11 +21,21 @@ products_app = Blueprint(
 
 app = products_app
 
+PAGE_DEFAULT = 1
+PER_PAGE_DEFAULT = 10
+
 
 @app.get("/", endpoint="list")
 def get_products_list():
     form = ProductForm()
-    products = products_storage.get_list()
+    all_products = products_storage.get_list()
+    page = request.args.get("page", PAGE_DEFAULT, type=int)
+    per_page = request.args.get(
+        "per_page", PER_PAGE_DEFAULT, type=int
+    )  # 10 elements listed on 1 page
+    to_idx = page * per_page
+    from_idx = to_idx - per_page
+    products = all_products[from_idx:to_idx]
     return render_template(
         "products/list.html",
         products=products,

@@ -99,7 +99,8 @@ products_storage = ProductsStorage()
 
 for idx in range(1, 57):
     random_suffix = "".join(random.choices(string.ascii_letters, k=4))
-    product_name = f"product-{idx:03d} {random_suffix}"  # 1 -> '001', 42 -> '042'
+    product_name = f"product-{idx:03d} {random_suffix}"
+    # {idx:03d} means 1 -> '001', 42 -> '042'
     product_price = random.randint(1, 9) * random.choice([10, 50, 100, 200, 400, 600])
     products_storage.add(
         product_name=product_name,
