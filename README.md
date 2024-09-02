@@ -74,6 +74,9 @@ Stage 14:
 - Auto-Loading in an infinite list (with Animation)
 - `hx-trigger="revealed"`
 
+Stage 15:
+- Products CRUD: HTMX paginate buttons
+
 # This REST API is still under development, check links for more info:
 
 ## URLs
