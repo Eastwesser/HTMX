@@ -36,10 +36,17 @@ def get_products_list():
     to_idx = page * per_page
     from_idx = to_idx - per_page
     products = all_products[from_idx:to_idx]
+    next_page = to_idx < len(all_products) and page + 1
+
+    template_name = "products/list.html"
+    if request.args.get("only_items"):
+        template_name = ("products/components/only-items-reveal.html",)
     return render_template(
-        "products/list.html",
+        template_name,
         products=products,
         form=form,
+        next_page=next_page,
+        per_page=per_page,
     )
 
 
