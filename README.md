@@ -71,6 +71,8 @@ Stage 13:
 
 Stage 14:
 - Products CRUD: HTMX Reveal load + paginate
+- Auto-Loading in an infinite list (with Animation)
+- `hx-trigger="revealed"`
 
 # This REST API is still under development, check links for more info:
 
